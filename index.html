@@ -31,8 +31,12 @@
         I am trying to dry out my floor as much as possible and give it a new coat of finish… But I still need to drive all the kids to school. 
         And I just HATE it when they make so much noise at school…</p>
 
-    <div id="arrow">
-        <img src="assets/red_arrow_transparent.PNG" alt="A red arrow with transparent background" width=200 height=100>
+    <div id="choice-container">
+        <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="left">
+        <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="right">
+        <br>
+        <button type="button" id="clickleft">Take the kids to school.</button>
+        <button type="button" id="clickright">Deal with the flood.</button>
     </div>
 </body>
 
@@ -41,6 +45,32 @@
     $(document).ready(function() {
         $('.demo').typewrite({
             'delay': 50,
+        });
+    });
+
+    $( "#clickleft" ).click(function() {
+        $( "#arrow.right" ).animate({
+            opacity: 0,
+        }, 2000, function() {
+            // Animation complete.
+        });
+        $( "#arrow.left" ).animate({
+            opacity: 1,
+        }, 2000, function() {
+            // Animation complete.
+        });
+    });
+
+    $( "#clickright" ).click(function() {
+        $( "#arrow.right" ).animate({
+            opacity: 1,
+        }, 2000, function() {
+            // Animation complete.
+        });
+        $( "#arrow.left" ).animate({
+            opacity: 0,
+        }, 2000, function() {
+            // Animation complete.
         });
     });
 </script>

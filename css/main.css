@@ -8,6 +8,11 @@ h2 {
     font-size: large;
 }
 
+h4 {
+    text-align: left;
+    text-decoration: underline;
+}
+
 #ai-text {
     background-color: black;
     color: red;
@@ -15,4 +20,11 @@ h2 {
     padding-right: 80px;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+#arrow {
+    background-color: lightgray;
+    align-items: center;
+    padding-bottom: 25px;
+    padding-top: 25px;
 }

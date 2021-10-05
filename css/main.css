@@ -11,4 +11,8 @@ h2 {
 #ai-text {
     background-color: black;
     color: red;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }

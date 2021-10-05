@@ -1,1 +1,0 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f6cb9238-2801-448b-b086-3f4214183f35/deploy-status)](https://app.netlify.com/sites/angry-lewin-553f2c/deploys)

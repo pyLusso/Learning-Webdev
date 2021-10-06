@@ -35,7 +35,8 @@ p {
     text-align: center;
     color: black; 
 
-    background-size: 100% 100%;
+    background-size: contain;
+    /* background-size: 100% 100%; */
     background-repeat: no-repeat;
     border-style: solid;
     ;
@@ -62,7 +63,9 @@ p {
 #choice-container {
     /* background-color: lightgray; */
     /* align-items: center; */
-    height: 120px;
+    height: 80px;
+    border-style: dotted;
+    margin-top: 25px;
 }
 
 #choice-container div {
@@ -70,28 +73,31 @@ p {
     left: 5%;
     float: left;
     height: 100%;
-    width: 45%;
+    width: 30%;
     margin-top: 0%;
     padding-top: 0px;
+    
 }
 
 #arrow {
-    opacity: 0.5; 
+    opacity: 0; 
     /* height: 10%; */
 }
 
 .leftselect {
-    position: relative;
-    top: 42%;
-    left: 8%; 
-    width:25%
+    position: absolute;
+    top:25%;
+    right:50%;
+    /* left: 8%;  */
+    width:25%;
 }
 
 .rightselect {
-    position: relative;
-    top: 42%;
-    left: 25.8%; 
-    width:25%
+    position: absolute;
+    top:25%;
+    left:50%;
+    /* left: 25.8%;  */
+    width:25%;
 }
 
 #choice-container.rightselect {
@@ -102,6 +108,28 @@ p {
 
 .left {
     position: relative;
+    top: 10px;
+    left: 60%;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+    width: 35%;
+
+} 
+
+.right {
+    position: relative;
+    top: 10px;
+    left: 0%;
+
+    width: 35%;
+}
+
+/* .left {
+    position: relative;
     top: 20px;
     left: 50%;
     -webkit-transform: rotate(135deg);
@@ -111,9 +139,8 @@ p {
     transform: rotate(135deg);
 
     width: 20%;
-    /* height: 90%; */
-    /* height: 5%; */
-}
+
+} 
 
 .right {
     position: relative;
@@ -127,8 +154,7 @@ p {
     transform: rotate(45deg);
 
     width: 20%;
-    /* height: 90%; */
-}
+} */
 
 .image_bl {
     -webkit-transform: rotate(135deg);

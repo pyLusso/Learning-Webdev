@@ -33,18 +33,13 @@
                 I am trying to dry out my floor as much as possible and give it a new coat of finish… But I still need to drive all the kids to school. 
                 And I just HATE it when they make so much noise at school…</p>
         </div>
-        <!-- <p class="demo" id="ai-text"> Cat goes meow, dog goes bark, cow goes moo, human goes harrrr!
-            I got up in the morning and when I went to turn on the coffee machine I tripped over the hose and got a foot of water running through my kitchen floor. 
-            It looks like I am getting a cat hole in the floor… Anyway, the problem is that this is going to put the entire floor through its cycle. 
-            I am trying to dry out my floor as much as possible and give it a new coat of finish… But I still need to drive all the kids to school. 
-            And I just HATE it when they make so much noise at school…</p> -->
-        <!-- <p class="demo" id="ai-text" class="followup"></p> -->
 
         <div id="choice-container">
             <div style="padding: 0%;">
                 <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="left">
                 <button type="button" class="clickleft leftselect">Take the kids to school.</button>
             </div>
+            <div><h2>Make a Decision!</h2></div>
             <div style="padding: 0%;">
                 <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="right">
                 <button type="button" class="clickright rightselect">Deal with the flood.</button>
@@ -57,9 +52,10 @@
 <script>
     $(document).ready(function() {
         $('.demo').typewrite({
-            'delay': 20,
+            'delay': 1,
         });
     });
+
 
     $( ".clickleft" ).click(function() {
         $( "#arrow.right" ).animate({
@@ -73,8 +69,8 @@
             var div = document.getElementById('ai-text');
 
             let p = document.createElement("p");
-            let new_div = div.appendChild(p)
-            data = ' Extra stuff'
+            let new_div = div.appendChild(p);
+            data = ' Extra stuff';
             $(new_div).append(data).typewrite({
                     'delay': 20,
                 });
@@ -94,25 +90,51 @@
             var div = document.getElementById('ai-text');
 
             let p = document.createElement("p");
-            let new_div = div.appendChild(p)
-            data = ' Extra stuff'
+            let new_div = div.appendChild(p);
+            data = ' Extra stuff';
             $(new_div).append(data).typewrite({
                     'delay': 20,
                 });
 
-            // $(document).ready(function() {
-            //     $('#ai-text').typewrite({
-            //         'delay': 30,
-            //     });
-            // });
-            // div.innerHTML += 'Extra stuff'.typewrite({
-            //         'delay': 30,
-            //     });;
-            // Animation complete.
+
         });
     });
+
+    /* Failed time delay implementation */
+
+    // function typewrite() {
+    //     $(document).ready(function() {
+    //         $('.demo').typewrite({
+    //             'delay': 1,
+    //         });
+    //     });
+    // }
+
+    // $(document).ready(typewrite);
+
+    // $.when( typewrite() ).done(function() {
+    //     var div = document.getElementById('gpt-j');
+    //     let ele = document.createElement("div");
+
+    //     ele.id = "choice-container"
+
+    //     let new_div = div.appendChild(ele);
+
+    //     var content = [            
+    //         "<div style='padding: 0%;''>",
+    //         "    <img src='assets/red_arrow_transparent.PNG' id='arrow' alt='A red arrow with transparent background' class='left'>",
+    //         "    <button type='button' class='clickleft leftselect'>Take the kids to school.</button>",
+    //         "</div>",
+    //         "<div><h2>Make a Decision!</h2></div>",
+    //         "<div style='padding: 0%;'>",
+    //         "    <img src='assets/red_arrow_transparent.PNG' id='arrow' alt='A red arrow with transparent background' class='right'>",
+    //         "    <button type='button' class='clickright rightselect'>Deal with the flood.</button>",
+    //         "</div>",
+    //         "</div>",
+    //         ].join("<br/>");
+
+    //     $(new_div).append(content)
+    // });
+
 </script>
-
-
-
 </html>

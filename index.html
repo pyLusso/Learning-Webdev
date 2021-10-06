@@ -26,11 +26,19 @@
     <div id="gpt-j">
         <h4>Activity #1: Choose your own GPT-J adventure.</h4>
         <p>A day in the life of a language model.</p>
-        <p class="demo" id="ai-text"> Cat goes meow, dog goes bark, cow goes moo, human goes harrrr!
+        <div class="demo" id="ai-text">
+            <p> Cat goes meow, dog goes bark, cow goes moo, human goes harrrr!
+                I got up in the morning and when I went to turn on the coffee machine I tripped over the hose and got a foot of water running through my kitchen floor. 
+                It looks like I am getting a cat hole in the floor… Anyway, the problem is that this is going to put the entire floor through its cycle. 
+                I am trying to dry out my floor as much as possible and give it a new coat of finish… But I still need to drive all the kids to school. 
+                And I just HATE it when they make so much noise at school…</p>
+        </div>
+        <!-- <p class="demo" id="ai-text"> Cat goes meow, dog goes bark, cow goes moo, human goes harrrr!
             I got up in the morning and when I went to turn on the coffee machine I tripped over the hose and got a foot of water running through my kitchen floor. 
             It looks like I am getting a cat hole in the floor… Anyway, the problem is that this is going to put the entire floor through its cycle. 
             I am trying to dry out my floor as much as possible and give it a new coat of finish… But I still need to drive all the kids to school. 
-            And I just HATE it when they make so much noise at school…</p>
+            And I just HATE it when they make so much noise at school…</p> -->
+        <!-- <p class="demo" id="ai-text" class="followup"></p> -->
 
         <div id="choice-container">
             <div style="padding: 0%;">
@@ -42,13 +50,6 @@
                 <button type="button" class="clickright rightselect">Deal with the flood.</button>
             </div>
         </div>
-        <!-- <div id="choice-container">
-            <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="left">
-            <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="right">
-            <br>
-            <button type="button" id="clickleft" class="leftselect">Take the kids to school.</button>
-            <button type="button" id="clickright" class="rightselect">Deal with the flood.</button>
-        </div> -->
     </div>
 </body>
 
@@ -56,7 +57,7 @@
 <script>
     $(document).ready(function() {
         $('.demo').typewrite({
-            'delay': 50,
+            'delay': 20,
         });
     });
 
@@ -68,7 +69,15 @@
         });
         $( "#arrow.left" ).animate({
             opacity: 1,
-        }, 2000, function() {
+        }, 1000, function() {
+            var div = document.getElementById('ai-text');
+
+            let p = document.createElement("p");
+            let new_div = div.appendChild(p)
+            data = ' Extra stuff'
+            $(new_div).append(data).typewrite({
+                    'delay': 20,
+                });
             // Animation complete.
         });
     });
@@ -76,12 +85,29 @@
     $( ".clickright" ).click(function() {
         $( "#arrow.right" ).animate({
             opacity: 1,
-        }, 2000, function() {
+        }, 1000, function() {
             // Animation complete.
         });
         $( "#arrow.left" ).animate({
             opacity: 0,
         }, 2000, function() {
+            var div = document.getElementById('ai-text');
+
+            let p = document.createElement("p");
+            let new_div = div.appendChild(p)
+            data = ' Extra stuff'
+            $(new_div).append(data).typewrite({
+                    'delay': 20,
+                });
+
+            // $(document).ready(function() {
+            //     $('#ai-text').typewrite({
+            //         'delay': 30,
+            //     });
+            // });
+            // div.innerHTML += 'Extra stuff'.typewrite({
+            //         'delay': 30,
+            //     });;
             // Animation complete.
         });
     });

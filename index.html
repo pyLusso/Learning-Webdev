@@ -33,12 +33,22 @@
             And I just HATE it when they make so much noise at school…</p>
 
         <div id="choice-container">
+            <div style="padding: 0%;">
+                <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="left">
+                <button type="button" class="clickleft leftselect">Take the kids to school.</button>
+            </div>
+            <div style="padding: 0%;">
+                <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="right">
+                <button type="button" class="clickright rightselect">Deal with the flood.</button>
+            </div>
+        </div>
+        <!-- <div id="choice-container">
             <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="left">
             <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="right">
             <br>
-            <button type="button" id="clickleft">Take the kids to school.</button>
-            <button type="button" id="clickright">Deal with the flood.</button>
-        </div>
+            <button type="button" id="clickleft" class="leftselect">Take the kids to school.</button>
+            <button type="button" id="clickright" class="rightselect">Deal with the flood.</button>
+        </div> -->
     </div>
 </body>
 
@@ -50,7 +60,7 @@
         });
     });
 
-    $( "#clickleft" ).click(function() {
+    $( ".clickleft" ).click(function() {
         $( "#arrow.right" ).animate({
             opacity: 0,
         }, 2000, function() {
@@ -63,7 +73,7 @@
         });
     });
 
-    $( "#clickright" ).click(function() {
+    $( ".clickright" ).click(function() {
         $( "#arrow.right" ).animate({
             opacity: 1,
         }, 2000, function() {

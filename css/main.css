@@ -1,3 +1,7 @@
+body{
+    margin: 0px;
+}
+
 h1 {
     text-align: center;
     font-size: xx-large;
@@ -21,20 +25,26 @@ p {
 }
 
 #masthead{
+    position: relative;
+	margin: 0px;
+	padding: 0;
+    border: 3px;
+    padding-bottom: 350px;
+    vertical-align: baseline;
+
     text-align: center;
     color: black; 
-    /* background-color: brown; */
-    /* background-image: url("assets/flame_banner.jpg"); */
-    padding-top: 25px;
-    padding-bottom: 400px;
-    background-size: 100% 95%;
+
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     border-style: solid;
+    ;
 }
 
 #gpt-j {
     padding-left: 2%;
     padding-right: 2%;
+    margin-bottom: 0%;
 }
 
 #ai-text {
@@ -46,53 +56,78 @@ p {
     padding-bottom: 30px;
     border-radius: 15px;
     font-family: "Courier New";
+    margin-bottom: 0%;
 }
 
 #choice-container {
-    background-color: lightgray;
-    align-items: center;
-    padding-bottom: 25px;
-    padding-top: 50px;
-    
+    /* background-color: lightgray; */
+    /* align-items: center; */
+    height: 120px;
+}
+
+#choice-container div {
+    position: relative;
+    left: 5%;
+    float: left;
+    height: 100%;
+    width: 45%;
+    margin-top: 0%;
+    padding-top: 0px;
 }
 
 #arrow {
     opacity: 0.5; 
-    text-align: center;
-
-  
-    /* display: inline-block; */
-    /* image-resolution: 100px 150px; */
-    /* height: 5%px; */
+    /* height: 10%; */
 }
 
+.leftselect {
+    position: relative;
+    top: 35%;
+    left: 5%; 
+    width:25%
+}
+
+.rightselect {
+    position: relative;
+    top: 35%;
+    left: 30%; 
+    width:25%
+}
+
+#choice-container.rightselect {
+    position: relative;
+    bottom: 0px;
+    /* left: 50%; */
+}
 
 .left {
-    /* display: inline-block; */
-    display: inline-block;
-    margin-left: 40%;
-    margin-right: auto;
+    position: relative;
+    top: 20px;
+    left: 50%;
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -ms-transform: rotate(135deg);
     -o-transform: rotate(135deg);
     transform: rotate(135deg);
-    /* height: 100px; */
-    width: 10%;
+
+    width: 20%;
+    /* height: 90%; */
+    /* height: 5%; */
 }
 
 .right {
-    /* display: inline-block; */
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    top: 20px;
+    left: 30%;
+
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
-    /* height: 100px; */
-    width: 10%;
+
+    width: 20%;
+    /* height: 90%; */
 }
 
 .image_bl {

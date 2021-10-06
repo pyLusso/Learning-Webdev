@@ -24,9 +24,27 @@ p {
     font-family: Helvetica, Verdana, Arial;
 }
 
-#navbar {
+.navbar {
+    display: flex;
+    align-items: center;
     position: sticky;
-    height: 20px;
+    left: 0%;
+    top: 0%;
+    height: 40px;
+    border: 3px;
+    border-style: solid;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 999999;
+}
+
+.navbar p {
+    font-weight: bold;
+}
+
+.nav-1 {
+    position: relative;
+    flex: 1;
+    padding-left: 20px;
 }
 
 #masthead{

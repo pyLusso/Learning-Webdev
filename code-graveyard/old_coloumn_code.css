@@ -1,0 +1,46 @@
+
+#choice-container {
+    /* background-color: lightgray; */
+    /* align-items: center; */
+    height: 80px;
+    border-style: dotted;
+    margin-top: 25px;
+}
+
+#choice-container div {
+    position: relative;
+    left: 5%;
+    float: left;
+    height: 100%;
+    width: 30%;
+    margin-top: 0%;
+    padding-top: 0px;
+    
+}
+
+#arrow {
+    opacity: 0; 
+    /* height: 10%; */
+}
+
+.leftselect {
+    position: absolute;
+    top:25%;
+    right:50%;
+    /* left: 8%;  */
+    width:25%;
+}
+
+.rightselect {
+    position: absolute;
+    top:25%;
+    left:50%;
+    /* left: 25.8%;  */
+    width:25%;
+}
+
+#choice-container.rightselect {
+    position: relative;
+    bottom: 0px;
+    /* left: 50%; */
+}

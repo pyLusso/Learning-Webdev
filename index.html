@@ -18,6 +18,10 @@
 </head>
 
 <body>
+    <div id="navbar">
+
+    </div>
+
     <div id="masthead" style="background-image: url('assets/flame_banner_transparent.PNG');">
         <h1>Time to learn some web development</h1>
         <h2>Lorem ipsum is boring. Let's generate filler text with GPT-J.</h2>
@@ -34,17 +38,20 @@
                 And I just HATE it when they make so much noise at school…</p>
         </div>
 
-        <div id="choice-container">
-            <div style="padding: 0%;">
-                <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="left">
-                <button type="button" class="clickleft leftselect">Take the kids to school.</button>
+        <div class="choice-containter">
+            <div class="box-1">
+                <img src="assets/red_arrow_transparent.PNG" id="arrow" class="box-1" alt="A red arrow with transparent background">
+                <button type="button" id="clickleft" class="box-1">Take the kids to school.</button>
             </div>
-            <div><h2>Make a Decision!</h2></div>
-            <div style="padding: 0%;">
-                <img src="assets/red_arrow_transparent.PNG" id="arrow" alt="A red arrow with transparent background" class="right">
-                <button type="button" class="clickright rightselect">Deal with the flood.</button>
+            <div class="box-2">
+                <h2>Make a Decision!</h2>
+            </div>
+            <div class="box-3">
+                <img src="assets/red_arrow_transparent.PNG" id="arrow" class="box-3" alt="A red arrow with transparent background" >
+                <button type="button" id="clickright" class="box-3">Deal with the flood.</button>
             </div>
         </div>
+
     </div>
 </body>
 
@@ -57,13 +64,13 @@
     });
 
 
-    $( ".clickleft" ).click(function() {
-        $( "#arrow.right" ).animate({
+    $( "#clickleft" ).click(function() {
+        $( "#arrow.box-3" ).animate({
             opacity: 0,
         }, 2000, function() {
             // Animation complete.
         });
-        $( "#arrow.left" ).animate({
+        $( "#arrow.box-1" ).animate({
             opacity: 1,
         }, 1000, function() {
             var div = document.getElementById('ai-text');
@@ -78,13 +85,13 @@
         });
     });
 
-    $( ".clickright" ).click(function() {
-        $( "#arrow.right" ).animate({
+    $( "#clickright" ).click(function() {
+        $( "#arrow.box-3" ).animate({
             opacity: 1,
         }, 1000, function() {
             // Animation complete.
         });
-        $( "#arrow.left" ).animate({
+        $( "#arrow.box-1" ).animate({
             opacity: 0,
         }, 2000, function() {
             var div = document.getElementById('ai-text');

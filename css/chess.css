@@ -1,0 +1,23 @@
+#chess {
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-bottom: 0%;
+}
+
+#gameboard {
+    display: flex;
+    height: 400px;
+    width: 400px;
+}
+
+.board-tile {
+    position: relative;
+    flex: 1;
+    width: 12.5%;
+    height: 12.5%;
+}
+
+#settings {
+    margin-bottom: 50px;
+
+}

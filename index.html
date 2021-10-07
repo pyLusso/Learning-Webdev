@@ -7,12 +7,15 @@
 
     <!-- Specify our main stylesheet -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chess.css">
 
     <!-- Use CDN to link jQuery library -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <!-- Link to custom jQuery function in js folder -->
     <script src="js/jquery-typewriter.js"></script>
+    <script src="js/chess.js"></script>
+    
     <title>Outdated website</title>
 
 </head>
@@ -54,7 +57,18 @@
                 <button type="button" id="clickright" class="box-3">Deal with the flood.</button>
             </div>
         </div>
+    </div>
 
+    <div id=chess>
+        <h4>Activity #2: Chess</h4>
+        <div id="gameboard">
+
+        </div>
+        <div id="settings">
+            <button id="reset-board">Reset Board</button>
+            <button id="flip-board">Flip board</button>
+            <button id="Resign">Resign</button>
+        </div>
     </div>
 </body>
 
@@ -66,6 +80,11 @@
         });
     });
 
+    $(document).ready(function() {
+        $('#gameboard').generate_board({
+
+        });
+    });  
 
     $( "#clickleft" ).click(function() {
         $( "#arrow.box-3" ).animate({
@@ -109,6 +128,9 @@
 
         });
     });
+
+    
+
 
     /* Failed time delay implementation */
 

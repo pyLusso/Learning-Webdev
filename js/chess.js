@@ -1,5 +1,3 @@
-
-
 $(function ($) {
     $.fn.generate_board = function (options) {
         var settings = {
@@ -8,25 +6,40 @@ $(function ($) {
             'board-height': 8
         };
         if (options) $.extend(settings, options);
+
+        function assign_colours(div,i,j) {
+            if (i % 2 == 0) {
+                if (j % 2 == 0) {
+                    div.style.backgroundColor = 'OldLace';
+                } else {
+                    div.style.backgroundColor = 'OliveDrab';
+                } 
+            } else {
+                if (j % 2 == 0) {
+                    div.style.backgroundColor = 'OliveDrab';
+                } else {
+                    div.style.backgroundColor = 'OldLace';
+                } 
+            }
+        }
         
         function make_board_tile(div,i,j) {
             let d = document.createElement("div");
-            d.id = "file-" + (i + 1)
+            d.id = "rank-" + (i + 1)
             d.className = "board-tile"
+            assign_colours(d,i,j)
             let new_div = div.appendChild(d);
-
-            data = 'Cell';
-            $(new_div).append(data)
         } 
 
         var board_div = document.getElementById('gameboard');
 
-        for (let j = 0; j < settings["board-height"]; j++) {
-            for (let i = 0; i < settings["board-width"]; i++) {
+        for (let j = 0; j < settings["board-width"]; j++) {
+            for (let i = 0; i < settings["board-height"]; i++) {
                 if (i == 0) {
                     let d = document.createElement("div");
-                    d.id = "rank-" + (j + 1)
+                    d.id = "file-" + (j + 1)
                     d.className = "board-tile"
+                    assign_colours(d,i,j)
                     var new_div = board_div.appendChild(d); 
                 }
                 var div = new_div
@@ -34,5 +47,10 @@ $(function ($) {
             }
         }
 
+    }
+})(jQuery);
+
+$(function ($) {
+    $.fn.populate_board = function () {
     }
 })(jQuery);

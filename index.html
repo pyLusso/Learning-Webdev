@@ -15,7 +15,7 @@
     <!-- Link to custom jQuery function in js folder -->
     <script src="js/jquery-typewriter.js"></script>
     <script src="js/chess.js"></script>
-    
+
     <title>Outdated website</title>
 
 </head>
@@ -82,8 +82,11 @@
 
     $(document).ready(function() {
         $('#gameboard').generate_board({
-
         });
+    });  
+
+    $(document).ready(function() {
+        $('#gameboard').populate_board({});
     });  
 
     $( "#clickleft" ).click(function() {
@@ -98,8 +101,11 @@
             var div = document.getElementById('ai-text');
 
             let p = document.createElement("p");
+            p.style.fontFamily = "Courier New";
             let new_div = div.appendChild(p);
-            data = ' Extra stuff';
+            data = `Okay, let's drive them to school first. And then the floor gets to dry!
+                    Note to self: if I ever get in an accident and one of my feet gets pinned, 
+                    I will have to start CPR on myself.`;
             $(new_div).append(data).typewrite({
                     'delay': 20,
                 });

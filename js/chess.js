@@ -1,7 +1,7 @@
+
 $(function ($) {
     $.fn.generate_board = function (options) {
         var settings = {
-            'selector': this,
             'board-width': 8,
             'board-height': 8
         };
@@ -48,9 +48,37 @@ $(function ($) {
         }
 
     }
+
+    $.fn.populate_board = function () {
+        var fileDivs = document.getElementById('gameboard').getElementsByTagName('div');
+
+        for( i=0; i< fileDivs.length; i++ ) {
+            var fileDiv = fileDivs[i];
+            var rankDivs = fileDiv.getElementsByTagName('div');
+            for( j=0; j< rankDivs.length; j++ ) {  
+                var rankDiv = rankDivs[j];
+                console.log(j)
+                if (j == 1) {
+                    let img = document.createElement("img");
+                    img.src = "assets/chess/b_pawn.png";
+                    img.className = "piece"
+                    rankDiv.appendChild(img);
+                    // rankDiv.style.backgroundImage = "url('assets/chess/b_pawn.png')";
+                    // rankDiv.style.backgroundRepeat = "no-repeat";
+                    // rankDiv.style.textAlign = "center";
+                } else if (j == 6) {
+                    let img = document.createElement("img");
+                    img.src = "assets/chess/w_pawn.png";
+                    img.className = "piece"
+                    rankDiv.appendChild(img);
+                }
+            }
+
+        }
+    }
 })(jQuery);
 
+
 $(function ($) {
-    $.fn.populate_board = function () {
-    }
+
 })(jQuery);

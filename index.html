@@ -90,11 +90,20 @@
     });  
 
     $(document).ready(function(){
+        var prev_id = undefined
         $( ".piece" ).click(function() {
-            $('.demo').select_piece({
+            $($).unselect_piece({
+                'pieceID': prev_id
+            });
+
+            pieceID = $($).select_piece({
                 'pieceID': this.id
             });
+
+            prev_id = pieceID
+            
         });
+
     });
 
     $( "#clickleft" ).click(function() {

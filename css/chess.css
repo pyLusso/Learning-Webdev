@@ -17,6 +17,7 @@
 .board-tile {
     /* @extend #gameboard; */
     position: relative;
+
     flex: 1 1 70px;
     width: 70px;
     height: 70px;
@@ -24,9 +25,9 @@
 }
 
 .piece {
-    position: relative;
+    /* position: relative;
     top: 10px;
-    left: 10px;
+    left: 10px; */
 }
 
 .bp {

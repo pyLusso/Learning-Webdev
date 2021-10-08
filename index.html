@@ -89,6 +89,14 @@
         $('#gameboard').populate_board({});
     });  
 
+    $(document).ready(function(){
+        $( ".piece" ).click(function() {
+            $('.demo').select_piece({
+                'pieceID': this.id
+            });
+        });
+    });
+
     $( "#clickleft" ).click(function() {
         $( "#arrow.box-3" ).animate({
             opacity: 0,

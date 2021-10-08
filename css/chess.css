@@ -6,6 +6,7 @@
 
 #gameboard {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     height: 560px;
     width: 560px;
@@ -16,7 +17,7 @@
 .board-tile {
     /* @extend #gameboard; */
     position: relative;
-    flex: 1;
+    flex: 1 1 70px;
     width: 70px;
     height: 70px;
 }
@@ -26,6 +27,55 @@
     top: 5px;
     left: 5px;
 }
+
+.bp {
+
+}
+
+.wp {
+
+}
+
+.bb {
+
+}
+
+.wb {
+
+}
+
+.br {
+
+}
+
+.wr {
+
+}
+
+.bn {
+
+}
+
+.wn {
+
+}
+
+.bq {
+
+}
+
+.wq {
+
+}
+
+.bk {
+
+}
+
+.wk {
+
+}
+
 
 #settings {
     margin-bottom: 50px;

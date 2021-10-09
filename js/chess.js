@@ -34,7 +34,7 @@ $(function ($) {
             d.id = "tile-" + (i+1) + (8-j)
             d.className = "board-tile"
             assign_colours(d,i,j)
-            let new_div = div.appendChild(d);
+            div.appendChild(d);
         } 
 
         var board_div = document.getElementById('gameboard');
@@ -128,7 +128,7 @@ $(function ($) {
         var selected_tile = document.getElementById(settings.pieceID);
         selected_tile.style.backgroundColor = "GreenYellow"
 
-        return String(settings.pieceID)
+        return [String(settings.pieceID), selected_tile.classList];
     }
 
     $.fn.unselect_piece = function (options) {
@@ -150,5 +150,52 @@ $(function ($) {
         j = tile_idx[1] % 8 
         assign_colours(selected_tile, i, j)
     }
+
+    $.fn.highlight_moves = function (options) {
+        var settings = {
+            'tileID': undefined,
+            'pieceClass': undefined
+        };
+        if (options) $.extend(settings, options);
+
+        pieceType = settings.pieceClass[settings.pieceClass.length - 1]
+
+        tilePos = settings.tileID.slice(-2)
+        tileFile = parseInt(tilePos[0]) 
+        tileRank = parseInt(tilePos[1]) 
+
+        console.log(settings.pieceClass[settings.pieceClass.length - 1])
+        console.log(tileFile)
+        console.log(tileRank)
+
+        tileID_prefix = settings.tileID.slice(0,-2)
+        console.log(tileID_prefix)
+        if (pieceType=="wp" && tileRank==2) {
+            // White pawns can move forward up to 2 tiles when on the 2nd rank.
+            validTiles = []
+
+            for (let i = 1; i <= 2; i++) {
+                validTiles.push(tileID_prefix + tileFile + (tileRank+i));
+            }
+
+            for (let i = 1; i <= validTiles.length; i++) {
+                var validTile = document.getElementById(validTiles[i-1]);
+                let img = document.createElement("img");
+                img.src = "assets/chess/d_pm_trans.png";
+                img.width= "30";
+                img.height= "30";
+                validTile.append(img)
+
+            }
+            console.log(validTiles)
+
+
+        }
+        
+
+    }
+
+
+
 
 })(jQuery);

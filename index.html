@@ -24,8 +24,8 @@
     <div class="navbar">
         <p class="nav-1">Go to Top</p>
         <p class="nav-1">GPT-J Adventure</p>
-        <p class="nav-1">Future link</p>
-        <p class="nav-1">Something else</p>
+        <p class="nav-1">Chess</p>
+        <p class="nav-1">Connect MetaMask</p>
     </div>
 
     <div id="masthead" style="background-image: url('assets/flame_banner_transparent.PNG');">
@@ -96,11 +96,19 @@
                 'pieceID': prev_id
             });
 
-            pieceID = $($).select_piece({
+            pieceInfo = $($).select_piece({
                 'pieceID': this.id
             });
 
-            prev_id = pieceID
+            $($).highlight_moves({
+                'tileID': pieceInfo[0],
+                'pieceClass': pieceInfo[1]
+            });
+
+            // console.log(pieceInfo[0])
+            // console.log(pieceInfo[1])
+
+            prev_id = pieceInfo[0]
             
         });
 

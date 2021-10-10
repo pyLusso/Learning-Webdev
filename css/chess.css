@@ -16,6 +16,7 @@
 
 .board-tile {
     /* @extend #gameboard; */
+    /* display:flex; */
     position: relative;
 
     flex: 1 1 70px;
@@ -23,6 +24,13 @@
     height: 70px;
     background-position: center; 
 }
+
+.valid-marker {
+    position: relative;
+    top: 22.5px;
+    left: 22.5px;
+}
+
 
 .piece {
     /* position: relative;

@@ -9,14 +9,18 @@ $(function ($) {
         if (i % 2 == 0) {
             if (j % 2 == 0) {
                 div.style.backgroundColor = 'OldLace';
+                div.classList.add('light')
             } else {
                 div.style.backgroundColor = 'OliveDrab';
+                div.classList.add('dark')
             } 
         } else {
             if (j % 2 == 0) {
                 div.style.backgroundColor = 'OliveDrab';
+                div.classList.add('dark')
             } else {
                 div.style.backgroundColor = 'OldLace';
+                div.classList.add('light')
             } 
         }
     }
@@ -164,15 +168,24 @@ $(function ($) {
         tileFile = parseInt(tilePos[0]) 
         tileRank = parseInt(tilePos[1]) 
 
-        console.log(settings.pieceClass[settings.pieceClass.length - 1])
-        console.log(tileFile)
-        console.log(tileRank)
-
         tileID_prefix = settings.tileID.slice(0,-2)
-        console.log(tileID_prefix)
+
+        let d_marker = document.createElement("img");
+        d_marker.src = "assets/chess/d_pm_trans.png";
+        d_marker.className = "valid-marker";
+        d_marker.width= "25";
+        d_marker.height= "25";
+
+        let l_marker = document.createElement("img");
+        l_marker.src = "assets/chess/l_pm_trans.png";
+        l_marker.className = "valid-marker";
+        l_marker.width= "25";
+        l_marker.height= "25";
+
         if (pieceType=="wp" && tileRank==2) {
             // White pawns can move forward up to 2 tiles when on the 2nd rank.
             validTiles = []
+
 
             for (let i = 1; i <= 2; i++) {
                 validTiles.push(tileID_prefix + tileFile + (tileRank+i));
@@ -180,16 +193,9 @@ $(function ($) {
 
             for (let i = 1; i <= validTiles.length; i++) {
                 var validTile = document.getElementById(validTiles[i-1]);
-                let img = document.createElement("img");
-                img.src = "assets/chess/d_pm_trans.png";
-                img.width= "30";
-                img.height= "30";
-                validTile.append(img)
 
+                validTile.append(d_marker)
             }
-            console.log(validTiles)
-
-
         }
         
 

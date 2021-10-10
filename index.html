@@ -15,6 +15,10 @@
     <!-- Link to custom jQuery function in js folder -->
     <script src="js/jquery-typewriter.js"></script>
     <script src="js/chess.js"></script>
+    <!-- <script type="module" src="src/web3.js"></script> -->
+    <script src="node/example.js"></script>
+
+    <!-- https://mainnet.infura.io/v3/93498ec03efb4660b6f7fa3adfe9bd98 -->
 
     <title>Outdated website</title>
 
@@ -25,7 +29,7 @@
         <p class="nav-1">Go to Top</p>
         <p class="nav-1">GPT-J Adventure</p>
         <p class="nav-1">Chess</p>
-        <p class="nav-1">Connect MetaMask</p>
+        <p id="metamask" class="nav-1">Connect MetaMask</p>
     </div>
 
     <div id="masthead" style="background-image: url('assets/flame_banner_transparent.PNG');">
@@ -59,7 +63,7 @@
         </div>
     </div>
 
-    <div id=chess>
+    <div id="chess">
         <h4>Activity #2: Chess</h4>
         <div id="gameboard">
 
@@ -70,10 +74,18 @@
             <button id="Resign">Resign</button>
         </div>
     </div>
+
+    <div id="defi">
+        <h4>Activity #3: Simple yield farm</h4>
+    </div>
 </body>
 
 <!--- Specify function class selector and parameters-->
 <script>
+    $(document).ready(function() {
+        web3_test()
+    });
+
     $(document).ready(function() {
         $('.demo').typewrite({
             'delay': 1,

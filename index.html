@@ -14,9 +14,11 @@
 
     <!-- Link to custom jQuery function in js folder -->
     <script src="js/jquery-typewriter.js"></script>
-    <script src="js/chess.js"></script>
+    <script src= "js/chess.js"></script>
     <!-- <script type="module" src="src/web3.js"></script> -->
-    <script src="node/example.js"></script>
+    <script src="js/defi.js"></script>
+    <script data-main="config" src="require.js"></script>
+    <!-- <script ></script> -->
 
     <!-- https://mainnet.infura.io/v3/93498ec03efb4660b6f7fa3adfe9bd98 -->
 
@@ -83,7 +85,9 @@
 <!--- Specify function class selector and parameters-->
 <script>
     $(document).ready(function() {
-        web3_test()
+        $( "#metamask" ).click(function() {
+            web3_demo();
+        });
     });
 
     $(document).ready(function() {

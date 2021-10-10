@@ -31,7 +31,7 @@
         <p class="nav-1">Go to Top</p>
         <p class="nav-1">GPT-J Adventure</p>
         <p class="nav-1">Chess</p>
-        <p id="metamask" class="nav-1">Connect MetaMask</p>
+        <button id="metamask" class="connect">Connect MetaMask</button>
     </div>
 
     <div id="masthead" style="background-image: url('assets/flame_banner_transparent.PNG');">
@@ -84,9 +84,13 @@
 
 <!--- Specify function class selector and parameters-->
 <script>
+    // $(document).ready(function() {
+    //     init_web3_provider()
+    // });
+
     $(document).ready(function() {
         $( "#metamask" ).click(function() {
-            web3_demo();
+            connect_wallet();
         });
     });
 

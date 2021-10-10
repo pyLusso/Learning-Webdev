@@ -156,3 +156,12 @@ p {
     padding-right: 2%;
     margin-bottom: 0%;
 }
+
+#metamask {
+    position: relative;
+}
+
+.connect {
+    width: 100px;
+    right: 10px;
+}

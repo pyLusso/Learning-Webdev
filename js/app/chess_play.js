@@ -6,9 +6,11 @@ define(["jquery", "highlight_moves", "select_piece", "unselect_piece"], function
                 'pieceID': prev_id
             });
 
-            pieceInfo = $($).select_piece({
+            pieceInfo = $().select_piece({
                 'pieceID': this.id
             });
+
+            console.log(pieceInfo)
 
             $().highlight_moves({
                 'tileID': pieceInfo[0],

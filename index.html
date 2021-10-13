@@ -9,21 +9,9 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/chess.css">
 
-    <!-- Use CDN to link jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-    <!-- Link to custom jQuery function in js folder -->
-    <script src="js/jquery-typewriter.js"></script>
-    <script src= "js/chess.js"></script>
-    <!-- <script type="module" src="src/web3.js"></script> -->
-    <script src="js/defi.js"></script>
-    <script data-main="config" src="require.js"></script>
-    <!-- <script ></script> -->
-
-    <!-- https://mainnet.infura.io/v3/93498ec03efb4660b6f7fa3adfe9bd98 -->
-
     <title>Outdated website</title>
 
+    <script data-main="js/app" src="js/lib/require.js"></script>
 </head>
 
 <body>
@@ -82,103 +70,242 @@
     </div>
 </body>
 
-<!--- Specify function class selector and parameters-->
+<!-- Use CDN to link jQuery library -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+
+<!--- Use requirejs to load web3 on the server side. -->
+
+
+<!-- Link to custom jQuery function in js folder -->
+<!-- <script src="scripts/js/jquery-typewriter.js"></script>
+<script src= "scripts/js/chess.js"></script>
+<script src="scripts/js/defi.js"></script> -->
+
 <script>
-    // $(document).ready(function() {
-    //     init_web3_provider()
+    requirejs(["app/typewrite"]);
+    requirejs(["app/chess_init"]);
+
+    requirejs(["app/click_test"]);
+
+    // requirejs(["app/chess_play"]);
+
+
+    // requirejs(['jquery'], function( $ ) {
+    //     $(document).ready(function(){
+    //         var prev_id = undefined
+    //         $( ".piece" ).click(function() {
+    //             alert("Piece Clicked!")
+    //         });
+    //     });
     // });
 
-    $(document).ready(function() {
-        $( "#metamask" ).click(function() {
-            connect_wallet();
-        });
-    });
+    // $(document).ready(function(){
+    //     var prev_id = undefined
+    //     $( ".piece" ).click(function() {
+    //         $().unselect_piece({
+    //             'pieceID': prev_id
+    //         });
 
-    $(document).ready(function() {
-        $('.demo').typewrite({
-            'delay': 1,
-        });
-    });
+    //         pieceInfo = $($).select_piece({
+    //             'pieceID': this.id
+    //         });
 
-    $(document).ready(function() {
-        $('#gameboard').generate_board({
-        });
-    });  
+    //         $().highlight_moves({
+    //             'tileID': pieceInfo[0],
+    //             'pieceClass': pieceInfo[1]
+    //         });
+    //         prev_id = pieceInfo[0]
+    //     });
+    // });  
 
-    $(document).ready(function() {
-        $('#gameboard').populate_board({});
-    });  
 
-    $(document).ready(function(){
-        var prev_id = undefined
-        $( ".piece" ).click(function() {
-            $($).unselect_piece({
-                'pieceID': prev_id
-            });
+    // var requirejs = require('r.js');
 
-            pieceInfo = $($).select_piece({
-                'pieceID': this.id
-            });
+    // requirejs(['jquery'], function ($) {
+    //     $('#defi').html('Hello world - this is ...');
 
-            $($).highlight_moves({
-                'tileID': pieceInfo[0],
-                'pieceClass': pieceInfo[1]
-            });
+    //     require(['typewriter'], function (typewrite) {
+    //         $(document).ready(function() {
+    //             $('.demo').typewrite({
+    //                 'delay': 1,
+    //             });
+    //         });
+    //     });
 
-            // console.log(pieceInfo[0])
-            // console.log(pieceInfo[1])
+    //     require(['chess'], function (generate_board, populate_board, unselect_piece, select_piece, highlight_moves) {
+    //         $(document).ready(function() {
+    //             $('#gameboard').generate_board({});
+    //             $('#gameboard').populate_board({});
+    //         });  
+    //     });
 
-            prev_id = pieceInfo[0]
+
+    // });
+
+    // requirejs(['main'], function (main) {
+    //     require(['jquery'], function ($) {
+    //         var $ = $
+    //         console.log($)
+
+    //     });
+    // });
+
+    // $( ".piece" ).click(function() {
+    //     alert("Clicked")
+    // });
+
+
+    // requirejs(['jquery'], function ($) {
+    //     $(document).ready(function(){
+    //         var prev_id = undefined
+    //         $( ".piece" ).click(function() {
+    //             $($).unselect_piece({
+    //                 'pieceID': prev_id
+    //             });
+
+    //             pieceInfo = $($).select_piece({
+    //                 'pieceID': this.id
+    //             });
+
+    //             $($).highlight_moves({
+    //                 'tileID': pieceInfo[0],
+    //                 'pieceClass': pieceInfo[1]
+    //             });
+    //             prev_id = pieceInfo[0]
+    //         });
+    //     });
+    // });
+
+ 
+
+
+    //     console.log("Main Loaded")
+
+    //     require(['jquery'], function ($) {
+    //         $(document).ready(function(){
+    //             var prev_id = undefined
+    //             $( ".piece" ).click(function() {
+    //                 $($).unselect_piece({
+    //                     'pieceID': prev_id
+    //                 });
+
+    //                 pieceInfo = $($).select_piece({
+    //                     'pieceID': this.id
+    //                 });
+
+    //                 $($).highlight_moves({
+    //                     'tileID': pieceInfo[0],
+    //                     'pieceClass': pieceInfo[1]
+    //                 });
+    //                 prev_id = pieceInfo[0]
+    //             });
+    //         });
+    //     });
+    // });
+
+    // requirejs(['chess'],
+    // function   (chess) {
+    //     var chess = require(['chess'])
+    //     // foo and bar are loaded according to requirejs
+    //     //config, but if not found, then node's require
+    //     //is used to load the module.
+    // });
+
+    // $(document).ready(function() {
+    //     init_web3_provider({});
+    // });
+
+    // $(document).ready(function() {
+    //     $( "#metamask" ).click(function() {
+    //         connect_wallet();
+    //     });
+    // });
+
+    // $(document).ready(function() {
+    //     $('.demo').typewrite({
+    //         'delay': 1,
+    //     });
+    // });
+
+    // $(document).ready(function() {
+    //     $('#gameboard').generate_board({
+    //     });
+    // });  
+
+    // $(document).ready(function() {
+    //     $('#gameboard').populate_board({});
+    // });  
+
+    // $(document).ready(function(){
+    //     var prev_id = undefined
+    //     $( ".piece" ).click(function() {
+    //         $($).unselect_piece({
+    //             'pieceID': prev_id
+    //         });
+
+    //         pieceInfo = $($).select_piece({
+    //             'pieceID': this.id
+    //         });
+
+    //         $($).highlight_moves({
+    //             'tileID': pieceInfo[0],
+    //             'pieceClass': pieceInfo[1]
+    //         });
+
+    //         // console.log(pieceInfo[0])
+    //         // console.log(pieceInfo[1])
+
+    //         prev_id = pieceInfo[0]
             
-        });
+    //     });
 
-    });
+    // });
 
-    $( "#clickleft" ).click(function() {
-        $( "#arrow.box-3" ).animate({
-            opacity: 0,
-        }, 2000, function() {
-            // Animation complete.
-        });
-        $( "#arrow.box-1" ).animate({
-            opacity: 1,
-        }, 1000, function() {
-            var div = document.getElementById('ai-text');
+    // $( "#clickleft" ).click(function() {
+    //     $( "#arrow.box-3" ).animate({
+    //         opacity: 0,
+    //     }, 2000, function() {
+    //         // Animation complete.
+    //     });
+    //     $( "#arrow.box-1" ).animate({
+    //         opacity: 1,
+    //     }, 1000, function() {
+    //         var div = document.getElementById('ai-text');
 
-            let p = document.createElement("p");
-            p.style.fontFamily = "Courier New";
-            let new_div = div.appendChild(p);
-            data = `Okay, let's drive them to school first. And then the floor gets to dry!
-                    Note to self: if I ever get in an accident and one of my feet gets pinned, 
-                    I will have to start CPR on myself.`;
-            $(new_div).append(data).typewrite({
-                    'delay': 20,
-                });
-            // Animation complete.
-        });
-    });
+    //         let p = document.createElement("p");
+    //         p.style.fontFamily = "Courier New";
+    //         let new_div = div.appendChild(p);
+    //         data = `Okay, let's drive them to school first. And then the floor gets to dry!
+    //                 Note to self: if I ever get in an accident and one of my feet gets pinned, 
+    //                 I will have to start CPR on myself.`;
+    //         $(new_div).append(data).typewrite({
+    //                 'delay': 20,
+    //             });
+    //         // Animation complete.
+    //     });
+    // });
 
-    $( "#clickright" ).click(function() {
-        $( "#arrow.box-3" ).animate({
-            opacity: 1,
-        }, 1000, function() {
-            // Animation complete.
-        });
-        $( "#arrow.box-1" ).animate({
-            opacity: 0,
-        }, 2000, function() {
-            var div = document.getElementById('ai-text');
+    // $( "#clickright" ).click(function() {
+    //     $( "#arrow.box-3" ).animate({
+    //         opacity: 1,
+    //     }, 1000, function() {
+    //         // Animation complete.
+    //     });
+    //     $( "#arrow.box-1" ).animate({
+    //         opacity: 0,
+    //     }, 2000, function() {
+    //         var div = document.getElementById('ai-text');
 
-            let p = document.createElement("p");
-            let new_div = div.appendChild(p);
-            data = ' Extra stuff';
-            $(new_div).append(data).typewrite({
-                    'delay': 20,
-                });
+    //         let p = document.createElement("p");
+    //         let new_div = div.appendChild(p);
+    //         data = ' Extra stuff';
+    //         $(new_div).append(data).typewrite({
+    //                 'delay': 20,
+    //             });
 
 
-        });
-    });
+    //     });
+    // });
 
     
 

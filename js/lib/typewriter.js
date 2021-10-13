@@ -1,8 +1,4 @@
-/*
-    All credit goes to https://github.com/chadselph/jquery-typewriter
-*/
-
-$(function ($) {
+define(["jquery"], function($) {
     $.fn.typewrite = function ( options ) {
         var settings = {
             'selector': this,
@@ -42,4 +38,4 @@ $(function ($) {
 
         return this;
     };
-})(jQuery);
+});

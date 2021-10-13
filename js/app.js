@@ -7,12 +7,15 @@ requirejs.config({
     paths: {
         app: "../app",
         jquery: 'https:////ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
-        // web3: 'https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min',
+        web3: 'https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min',
         typewriter: 'typewriter',
         chess_init: '../app',
-        // defi: 'js/defi'
-    }
-    // nodeRequire: require
+        chess_play: '../app',
+        connect_wallet: '../app',
+        display_wallet_stats: '../app',
+        toggle_connect_button: '../app'
+    },
+    nodeRequire: require
 });
 
 

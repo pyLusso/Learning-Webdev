@@ -10,8 +10,6 @@ define(["jquery", "highlight_moves", "select_piece", "unselect_piece"], function
                 'pieceID': this.id
             });
 
-            console.log(pieceInfo)
-
             $().highlight_moves({
                 'tileID': pieceInfo[0],
                 'pieceClass': pieceInfo[1]

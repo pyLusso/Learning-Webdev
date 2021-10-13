@@ -16,7 +16,7 @@ define(["jquery"], function ($){
         tile_idx = tile_id.slice(-2)
         i = tile_idx[0] - 1
         j = tile_idx[1] % 8 
-        assign_colours(selected_tile, i, j)
+        $().assign_colours(selected_tile, i, j)
     }     
 });
 

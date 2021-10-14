@@ -1,10 +1,18 @@
-define(["jquery", "web3"], function($, web3) {
+define(["jquery", "metamask"], function($, metamask) {
     localStorage.clear();
 
-    const Web3 = require('web3')
-    var web3 = new Web3("https://mainnet.infura.io/v3/93498ec03efb4660b6f7fa3adfe9bd98");
-
     $( "#metamask" ).click(async function() {
+        // const provider = await metamask.detect_eth_provider();
+        // console.log(provider);
+
+        if (ethereum.selectedAddress !== null) {
+            try {
+                $('#wallet').remove();
+            } catch {
+                console.log("Stats haven't been logged yet!")
+            };
+        };
+
         wallet_addr = await ethereum.request({ method: "eth_requestAccounts"});
         wallet_bal = await web3.eth.getBalance(wallet_addr[0]);
         let ethBalance = web3.utils.fromWei(wallet_bal, 'ether');
@@ -17,7 +25,14 @@ define(["jquery", "web3"], function($, web3) {
         localStorage && (localStorage.wallet_balance = ethBalance);
 
         $().display_wallet_stats({});
-        $().toggle_connect_button({web3});
+        // prom = $().toggle_connect_button({web3});
+        // console.log(prom)
+
+        accounts = await web3.eth.getAccounts();
+        console.log(ethereum.selectedAddress); 
+
+        $('#metamask').replaceWith($("<p class='nav-1'>" + "wallet connected" + "</p>"));
+
     });
 });
 

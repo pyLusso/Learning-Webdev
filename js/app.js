@@ -8,6 +8,7 @@ requirejs.config({
         app: "../app",
         jquery: 'https:////ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
         web3: 'https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min',
+        metamask: 'https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min', 
         typewriter: 'typewriter',
         chess_init: '../app',
         chess_play: '../app',
